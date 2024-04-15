@@ -1,0 +1,23 @@
+set_pin_assignment	{ cc1_debug }	{ LOCATION = P2; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ cc1_in }	{ LOCATION = K15; IOSTANDARD = LVDS25; DIFFRESISTOR = NONE; PACKREG = OFF; }
+set_pin_assignment	{ cc1_out }	{ LOCATION = P6; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ cc2_debug }	{ LOCATION = M4; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ cc2_in }	{ LOCATION = M15; IOSTANDARD = LVDS25; DIFFRESISTOR = NONE; PACKREG = OFF; }
+set_pin_assignment	{ cc2_out }	{ LOCATION = N6; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ cc_oen }	{ LOCATION = R1; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ sys_clk }	{ LOCATION = T8; IOSTANDARD = LVCMOS25; }
+set_pin_assignment	{ sys_nrst }	{ LOCATION = C3; IOSTANDARD = LVCMOS25; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

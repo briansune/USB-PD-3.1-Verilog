@@ -1,0 +1,36 @@
+standard
+***Report Model: usb_pd_top***
+
+IO Statistics
+#IO                         9
+  #input                    4
+  #output                   5
+  #inout                    0
+
+Gate Statistics
+#Basic gates             2258
+  #and                    114
+  #nand                     0
+  #or                      28
+  #nor                      0
+  #xor                    436
+  #xnor                     0
+  #buf                      0
+  #not                    118
+  #bufif1                   0
+  #MX21                   642
+  #FADD                     0
+  #DFF                    920
+  #LATCH                    0
+#MACRO_ADD                 21
+#MACRO_EQ                  49
+#MACRO_MUX               1782
+
+Report Hierarchy Area:
++----------------------------------------------------------+
+|Instance           |Module        |gates  |seq    |macros |
++----------------------------------------------------------+
+|top                |usb_pd_top    |1338   |920    |71     |
+|  usb_pd_phy_rd_u0 |usb_pd_phy_rd |372    |364    |29     |
+|  usb_pd_phy_wr_u0 |usb_pd_phy_wr |853    |361    |22     |
++----------------------------------------------------------+

@@ -1,0 +1,40 @@
+standard
+***Report Model: usb_pd_top***
+
+IO Statistics
+#IO                         9
+  #input                    4
+  #output                   5
+  #inout                    0
+
+LUT Statistics
+#Total_luts              1599
+  #lut4                   802
+  #lut5                   521
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b             276
+
+Utilization Statistics
+#lut                     1599   out of  19600    8.16%
+#reg                      726   out of  19600    3.70%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                       11   out of    188    5.85%
+  #ireg                     0
+  #oreg                     0
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------+
+|Instance           |Module                          |lut    |ripple |seq    |bram   |dsp    |
++--------------------------------------------------------------------------------------------+
+|top                |usb_pd_top                      |1323   |276    |726    |0      |0      |
+|  usb_pd_phy_rd_u0 |usb_pd_phy_rd(system_khz=30000) |334    |55     |364    |0      |0      |
+|  usb_pd_phy_wr_u0 |usb_pd_phy_wr(system_khz=30000) |642    |72     |169    |0      |0      |
++--------------------------------------------------------------------------------------------+

@@ -1,0 +1,47 @@
+standard
+***Report Model: usb_pd_top***
+
+IO Statistics
+#IO                         9
+  #input                    4
+  #output                   5
+  #inout                    0
+
+Utilization Statistics
+#lut                        1   out of  19600    0.01%
+#reg                        0   out of  19600    0.00%
+#le                         1
+  #lut only                 1   out of      1  100.00%
+  #reg only                 0   out of      1    0.00%
+  #lut&reg                  0   out of      1    0.00%
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                       11   out of    188    5.85%
+  #ireg                     0
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+
+Detailed IO Report
+
+    Name       Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+   cc1_in        INPUT        K15         LVDS33           N/A           NONE       NONE    
+   cc2_in        INPUT         M5         LVDS33           N/A           NONE       NONE    
+   sys_clk       INPUT         T8        LVCMOS33          N/A          PULLUP      NONE    
+  sys_nrst       INPUT         C3        LVCMOS33          N/A          PULLUP      NONE    
+  cc1_debug     OUTPUT         P2        LVCMOS33           4            NONE       NONE    
+   cc1_out      OUTPUT         P6        LVCMOS33           4            NONE       NONE    
+  cc2_debug     OUTPUT         M4        LVCMOS33           4            NONE       NONE    
+   cc2_out      OUTPUT        M15        LVCMOS33           8            NONE       NONE    
+   cc_oen       OUTPUT         R1        LVCMOS33           8            NONE       OREG    
+
+Report Hierarchy Area:
++--------------------------------------------------------------------+
+|Instance |Module     |le    |lut    |ripple |seq    |bram   |dsp    |
++--------------------------------------------------------------------+
+|top      |usb_pd_top |1     |1      |0      |1      |0      |0      |
++--------------------------------------------------------------------+

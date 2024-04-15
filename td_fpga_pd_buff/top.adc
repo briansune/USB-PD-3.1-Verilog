@@ -1,0 +1,31 @@
+set_pin_assignment	{ cc1_debug }	{ LOCATION = P2; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 4; }
+set_pin_assignment	{ cc1_in }	{ LOCATION = K15; IOSTANDARD = LVDS33; }
+set_pin_assignment	{ cc1_out }	{ LOCATION = P6; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 4; }
+set_pin_assignment	{ cc2_debug }	{ LOCATION = M4; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 4; }
+set_pin_assignment	{ cc2_in }	{ LOCATION = M5; IOSTANDARD = LVDS33; DIFFRESISTOR = NONE; }
+set_pin_assignment	{ cc2_out }	{ LOCATION = M15; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ cc_oen }	{ LOCATION = R1; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ sys_clk }	{ LOCATION = T8; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ sys_nrst }	{ LOCATION = C3; IOSTANDARD = LVCMOS33; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

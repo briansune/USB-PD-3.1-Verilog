@@ -1,0 +1,39 @@
+standard
+***Report Model: usb_pd_top***
+
+IO Statistics
+#IO                         9
+  #input                    4
+  #output                   5
+  #inout                    0
+
+LUT Statistics
+#Total_luts                 1
+  #lut4                     1
+  #lut5                     0
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b               0
+
+Utilization Statistics
+#lut                        1   out of  19600    0.01%
+#reg                        0   out of  19600    0.00%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                       11   out of    188    5.85%
+  #ireg                     0
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+Report Hierarchy Area:
++--------------------------------------------------------------------+
+|Instance        |Module     |lut    |ripple |seq    |bram   |dsp    |
++--------------------------------------------------------------------+
+|top             |usb_pd_top |1      |0      |1      |0      |0      |
+|  usb_pd_pll_u0 |usb_pd_pll |0      |0      |0      |0      |0      |
++--------------------------------------------------------------------+
