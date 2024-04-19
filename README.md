@@ -9,7 +9,12 @@ This example demonstrate a PD 3.1 Trigger design via FPGA internal LVDS and exte
 
 The output voltage is set to 28V.
 
-![image](https://github.com/briansune/fixed_pd_usb/assets/29487339/09afa00b-b6c5-44f9-b05c-7ac40f8554e4)
+<img src="https://github.com/briansune/fixed_pd_usb/assets/29487339/09afa00b-b6c5-44f9-b05c-7ac40f8554e4" width="200"/>
+
+# Anlogic FPGA (Spartan 7 is broke during high voltage test)
+
+![image](https://github.com/briansune/fixed_pd_usb/assets/29487339/84199388-8fbb-4ce8-aa1d-a36d92fbfd03)
+
 
 # Reference Links:
 
