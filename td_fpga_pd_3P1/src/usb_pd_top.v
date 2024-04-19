@@ -24,11 +24,7 @@ module usb_pd_top#(
 	// Differential capture for input
 	// Biased @ VUSB_CC * 40%
 	input	cc1_in,
-	// input	cc1_in_p,
-	// input	cc1_in_n,
 	input	cc2_in,
-	// input	cc2_in_p,
-	// input	cc2_in_n,
 	
 	output	cc_oen,
 	output	cc1_out,
@@ -46,12 +42,6 @@ module usb_pd_top#(
 	localparam integer oh_us_delay		= (mmcm_freq / 10) - 1;
 	localparam integer delay_0p8us		= (mmcm_freq * 0.8) - 1;
 	localparam integer heartbe_wait		= (mmcm_freq * hrtbeat_ms) - 1;
-	
-	// initial begin
-		// $display("pon wiat %d", pon_wait);
-		// $display("100us %d", oh_us_delay);
-		// $display("800us %d", delay_0p8us);
-	// end
 	
 	wire				glb_clk;
 	wire				glb_nrst;
@@ -106,11 +96,7 @@ module usb_pd_top#(
 		.cc_dout		(cc_dout),
 		
 		.phy_in_cc1		(cc1_in),
-		// .phy_in_cc1_p	(cc1_in_p),
-		// .phy_in_cc1_n	(cc1_in_n),
 		.phy_in_cc2		(cc2_in),
-		// .phy_in_cc2_p	(cc2_in_p),
-		// .phy_in_cc2_n	(cc2_in_n),
 		
 		.phy_discon		(phy_discon),
 		
@@ -369,7 +355,6 @@ module usb_pd_top#(
 				fsm_crc_good0: begin
 					
 					if(delay_abit >= oh_us_delay)begin
-						
 						if(!bmc_rd_busy)begin
 							delay_abit <= 28'd0;
 							bmc_wen <= 1'b1;
@@ -456,6 +441,13 @@ module usb_pd_top#(
 						main_fsm <= fsm_crc0_done;
 						epr_pdo_lst_rdy <= 1'b1;
 					end
+					
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_wait_pd_cap2: begin
@@ -482,6 +474,13 @@ module usb_pd_top#(
 						wr_words2[5] <= rd_words[6];
 						
 						main_fsm <= fsm_crc_good0;
+					end
+					
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
 					end
 				end
 				
@@ -614,12 +613,13 @@ module usb_pd_top#(
 						rd_num == 3'd0
 					)begin
 						main_fsm <= fsm_wait_accept;
-					end else if(
-						bmc_rd_busy & crc_valid & pkg_valid &
-						rd_type == 5'hD &
-						rd_num == 3'd0
-					)begin
-						main_fsm <= fsm_error;
+					end
+					
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
 					end
 				end
 				
@@ -631,7 +631,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_crc_good2;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_crc_good2: begin
@@ -661,7 +666,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_crc_good3;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_crc_good3: begin
@@ -763,6 +773,13 @@ module usb_pd_top#(
 					)begin
 						main_fsm <= fsm_epr_hrtb_ret;
 					end
+					
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_epr_hrtb_ret: begin
@@ -779,6 +796,13 @@ module usb_pd_top#(
 							wr_num <= 3'd0;
 							wr_type <= 4'h1;
 						end
+					end
+					
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
 					end
 				end
 				
@@ -836,7 +860,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_src_epr_resp;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_src_epr_resp: begin
@@ -854,7 +883,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_src_epr_gdcrc;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_src_epr_gdcrc: begin
@@ -906,7 +940,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_src_epr_gdcrc2;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_src_epr_gdcrc2: begin
@@ -985,7 +1024,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_ck_src_srst_acp;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_ck_src_srst_acp: begin
@@ -997,7 +1041,12 @@ module usb_pd_top#(
 						main_fsm <= fsm_ssrst_acp_crc;
 					end
 					
-					delay_abit <= 28'd0;
+					if(delay_abit >= heartbe_wait)begin
+						delay_abit <= 28'd0;
+						main_fsm <= fsm_idle;
+					end else begin
+						delay_abit <= delay_abit + 1'b1;
+					end
 				end
 				
 				fsm_ssrst_acp_crc: begin

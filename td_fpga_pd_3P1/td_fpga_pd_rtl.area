@@ -8,29 +8,29 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates             2661
-  #and                    143
+#Basic gates             2691
+  #and                    147
   #nand                     0
   #or                      31
   #nor                      0
   #xor                    436
   #xnor                     0
   #buf                      0
-  #not                    132
+  #not                    138
   #bufif1                   0
-  #MX21                   748
+  #MX21                   768
   #FADD                     0
   #DFF                   1171
   #LATCH                    0
 #MACRO_ADD                 24
-#MACRO_EQ                  65
-#MACRO_MUX               2498
+#MACRO_EQ                  64
+#MACRO_MUX               2528
 
 Report Hierarchy Area:
 +----------------------------------------------------------+
 |Instance           |Module        |gates  |seq    |macros |
 +----------------------------------------------------------+
-|top                |usb_pd_top    |1490   |1171   |90     |
+|top                |usb_pd_top    |1520   |1171   |89     |
 |  usb_pd_phy_rd_u0 |usb_pd_phy_rd |372    |368    |29     |
 |  usb_pd_phy_wr_u0 |usb_pd_phy_wr |853    |361    |22     |
 +----------------------------------------------------------+

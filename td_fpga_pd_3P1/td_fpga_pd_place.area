@@ -8,12 +8,12 @@ IO Statistics
   #inout                    0
 
 Utilization Statistics
-#lut                     2996   out of  19600   15.29%
+#lut                     3180   out of  19600   16.22%
 #reg                      999   out of  19600    5.10%
-#le                      3079
-  #lut only              2080   out of   3079   67.55%
-  #reg only                83   out of   3079    2.70%
-  #lut&reg                916   out of   3079   29.75%
+#le                      3267
+  #lut only              2268   out of   3267   69.42%
+  #reg only                87   out of   3267    2.66%
+  #lut&reg                912   out of   3267   27.92%
 #dsp                        0   out of     29    0.00%
 #bram                       0   out of     64    0.00%
   #bram9k                   0
@@ -43,5 +43,5 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------+
 |Instance |Module     |le    |lut    |ripple |seq    |bram   |dsp    |
 +--------------------------------------------------------------------+
-|top      |usb_pd_top |3079  |2841   |155    |999    |0      |0      |
+|top      |usb_pd_top |3267  |3025   |155    |999    |0      |0      |
 +--------------------------------------------------------------------+

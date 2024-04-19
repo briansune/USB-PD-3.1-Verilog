@@ -8,12 +8,12 @@ IO Statistics
   #inout                    0
 
 Utilization Statistics
-#lut                     2996   out of  19600   15.29%
+#lut                     3180   out of  19600   16.22%
 #reg                      999   out of  19600    5.10%
-#le                      3079
-  #lut only              2080   out of   3079   67.55%
-  #reg only                83   out of   3079    2.70%
-  #lut&reg                916   out of   3079   29.75%
+#le                      3267
+  #lut only              2268   out of   3267   69.42%
+  #reg only                87   out of   3267    2.66%
+  #lut&reg                912   out of   3267   27.92%
 #dsp                        0   out of     29    0.00%
 #bram                       0   out of     64    0.00%
   #bram9k                   0
@@ -44,20 +44,20 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------+
 |Instance |Module     |le    |lut    |ripple |seq    |bram   |dsp    |
 +--------------------------------------------------------------------+
-|top      |usb_pd_top |3079  |2841   |155    |999    |0      |0      |
+|top      |usb_pd_top |3267  |3025   |155    |999    |0      |0      |
 +--------------------------------------------------------------------+
 
 
 DataNet Average Fanout:
 
    Index     Fanout     Nets  
-    #1          1       1614  
-    #2          2       617   
-    #3          3       303   
-    #4          4       129   
-    #5        5-10      338   
-    #6        11-50     156   
+    #1          1       1673  
+    #2          2       660   
+    #3          3       309   
+    #4          4       130   
+    #5        5-10      379   
+    #6        11-50     155   
     #7       51-100      13   
-    #8       101-500     10   
+    #8       101-500     11   
     #9        >500       1    
-  Average     3.90            
+  Average     3.94            
