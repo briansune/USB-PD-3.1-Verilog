@@ -37,11 +37,13 @@ module usb_pd_top#(
 	localparam integer	mmcm_freq	= 30000;
 	localparam integer	pon_wait_ms	= 220;
 	localparam integer	hrtbeat_ms	= 300;
+	localparam integer	ready_ms	= 400;
 	
 	localparam integer pon_wait			= (mmcm_freq * pon_wait_ms) - 1;
 	localparam integer oh_us_delay		= (mmcm_freq / 10) - 1;
 	localparam integer delay_0p8us		= (mmcm_freq * 0.8) - 1;
 	localparam integer heartbe_wait		= (mmcm_freq * hrtbeat_ms) - 1;
+	localparam integer ready_wait		= (mmcm_freq * ready_ms) - 1;
 	
 	wire				glb_clk;
 	wire				glb_nrst;
@@ -666,7 +668,7 @@ module usb_pd_top#(
 						main_fsm <= fsm_crc_good3;
 					end
 					
-					if(delay_abit >= heartbe_wait)begin
+					if(delay_abit >= ready_wait)begin
 						delay_abit <= 28'd0;
 						main_fsm <= fsm_idle;
 					end else begin

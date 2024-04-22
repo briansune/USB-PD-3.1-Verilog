@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Version="1" Path="G:/20220805_PD_USBC/PD_SW/td_fpga_pd_3P1">
-    <Project_Created_Time></Project_Created_Time>
+    <Project_Created_Time>2024-04-19 05:58:37</Project_Created_Time>
     <TD_Version>5.0.30786</TD_Version>
     <UCode>00000000</UCode>
     <Name>td_fpga_pd</Name>
@@ -120,7 +120,7 @@
     <Configurations>
     </Configurations>
     <Project_Settings>
-        <Step_Last_Change>2024-04-19 06:10:44.560</Step_Last_Change>
+        <Step_Last_Change>2024-04-22 11:23:35.542</Step_Last_Change>
         <Current_Step>60</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>

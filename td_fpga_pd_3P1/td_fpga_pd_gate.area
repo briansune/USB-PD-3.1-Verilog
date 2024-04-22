@@ -8,15 +8,15 @@ IO Statistics
   #inout                    0
 
 LUT Statistics
-#Total_luts              2938
-  #lut4                  1803
-  #lut5                   799
+#Total_luts              2937
+  #lut4                  1778
+  #lut5                   793
   #lut6                     0
   #lut5_mx41                0
-  #lut4_alu1b             336
+  #lut4_alu1b             366
 
 Utilization Statistics
-#lut                     2938   out of  19600   14.99%
+#lut                     2937   out of  19600   14.98%
 #reg                      999   out of  19600    5.10%
 #le                         0
 #dsp                        0   out of     29    0.00%
@@ -34,7 +34,7 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------------------------------+
 |Instance           |Module                          |lut    |ripple |seq    |bram   |dsp    |
 +--------------------------------------------------------------------------------------------+
-|top                |usb_pd_top                      |2602   |336    |999    |0      |0      |
+|top                |usb_pd_top                      |2571   |366    |999    |0      |0      |
 |  usb_pd_phy_rd_u0 |usb_pd_phy_rd(system_khz=30000) |334    |55     |368    |0      |0      |
 |  usb_pd_phy_wr_u0 |usb_pd_phy_wr(system_khz=30000) |840    |72     |201    |0      |0      |
 +--------------------------------------------------------------------------------------------+
